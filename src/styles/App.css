@@ -1,0 +1,29 @@
+@import url('./fonts.css');
+
+*,
+*:before,
+*:after,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(
+    #4568DC,
+    #B06AB3
+  );
+}
