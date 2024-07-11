@@ -20,9 +20,9 @@
 
 ```json
 {
-  selectedNumber:
-    { firstField: [ *first field numbers* ], secondField: [ *second field numbers* ] },
-    isTicketWon: *Boolean(true||false)*
+  "selectedNumber": {
+    { "firstField": [ "first field numbers" ], "secondField": [ "second field numbers" ] },
+    "isTicketWon": "Boolean(true||false)"
   }
 }
 ```
