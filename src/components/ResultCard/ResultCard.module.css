@@ -1,0 +1,27 @@
+
+.wrapperCard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.header {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    padding: 0 0.3125rem;
+}
+
+.resultText {
+    font-size: 0.875rem;
+    padding: 0.8rem 0.3125rem;
+}
+
+.wrapperButton {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
