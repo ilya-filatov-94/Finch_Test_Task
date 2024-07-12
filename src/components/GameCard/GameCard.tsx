@@ -55,7 +55,7 @@ const GameCard: FC<{ headerTicket: string }> = memo(({ headerTicket }) => {
     selectorCounter(prev => prev + 1);
   }
 
-  async function getResults() {
+  function getResults() {
     const choosenNumbersFirstField = selectedCellsFirstField.filter(item => item.selected).map(item => item.id);
     if (choosenNumbersFirstField.length < limitFirstField) {
       setOpenWindow(true);
@@ -85,7 +85,7 @@ const GameCard: FC<{ headerTicket: string }> = memo(({ headerTicket }) => {
     }
     dispatch(setResultGame(resultGame));
     setLoading(true);
-    await postRequest(choosenNumbersFirstField, choosenNumbersSecondField, resultGame, 3);
+    postRequest(choosenNumbersFirstField, choosenNumbersSecondField, resultGame, 3);
   }
 
   function postRequest(firstFieldNums: number[], secondFieldNums: number[], resultGame: boolean, numberRepeat = 3) {
