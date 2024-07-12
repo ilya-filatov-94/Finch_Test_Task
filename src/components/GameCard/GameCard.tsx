@@ -88,7 +88,7 @@ const GameCard: FC<{ headerTicket: string }> = memo(({ headerTicket }) => {
     await postRequest(choosenNumbersFirstField, choosenNumbersSecondField, resultGame, 3);
   }
 
-  async function postRequest(firstFieldNums: number[], secondFieldNums: number[], resultGame: boolean, numberRepeat = 3) {
+  function postRequest(firstFieldNums: number[], secondFieldNums: number[], resultGame: boolean, numberRepeat = 3) {
     const postData = {
       selectedNumber: {
         firstField: firstFieldNums,
