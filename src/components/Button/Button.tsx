@@ -8,7 +8,7 @@ interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButton
 
 const Button: FC<IButtonProps> = ({ text, loading, ...props }) => {
   return (
-    <button className={styles.wrapper} {...props}>
+    <button className={styles.button} {...props}>
       {loading ? (
         <div className={styles.wrapperLoader}>
           <p>Пожалуйста, подождите</p>

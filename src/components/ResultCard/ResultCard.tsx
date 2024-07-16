@@ -6,20 +6,15 @@ import Button from '../Button/Button';
 
 const ResultCard: FC<{ headerTicket: string }> = ({ headerTicket }) => {
   const navigate = useNavigate();
-  const { result } = useAppSelector(state => state.resultGame);
-
-  let resultGameText;
-  if (result) {
-    resultGameText = 'Ого, Вы выйграли! Поздравляем!';
-  } else {
-    resultGameText = 'К сожалению, Вы проиграли, повезёт в другой раз!';
-  }
+  const { hasResult } = useAppSelector(state => state.resultGame);
 
   return (
     <div className={styles.wrapperCard}>
       <div>
         <h1 className={styles.header}>{headerTicket}</h1>
-        <p className={styles.resultText}>{resultGameText}</p>
+        <p className={styles.resultText}>
+          {hasResult ? 'Ого, Вы выиграли! Поздравляем!' : 'К сожалению, Вы проиграли, повезёт в другой раз!'}
+        </p>
       </div>
       <div className={styles.wrapperButton}>
         <Button text="Попробовать снова" onPointerDown={() => navigate(-1)} />

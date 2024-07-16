@@ -1,83 +1,34 @@
 .wrapper {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .wrapper .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0.3125rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.3125rem;
 }
 
 .wrapper .header h1 {
-    font-size: 1rem;
-    line-height: 1.375rem;
-}
-
-.wrapper .descriptionField {
-    margin-top: 0.75rem;
-    font-size: 0.875rem;
-    padding: 0 0.3125rem;
-}
-
-.nameField {
-    padding-right: 8px;
-    font-weight: 500;
-}
-
-.rulesOfField {
-    font-weight: 300;
-}
-
-.playingField {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 8px 0 0 0;
-    cursor: pointer;
-}
-
-.playingField .playingCell {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #000;
-}
-
-.playingField .playingCell {
-    border-radius: 5px;
-    border: 1px solid #DDDDDD;
-    background-color: #fff;
-}
-
-.playingField .playingCell.activeCell {
-    align-self: center;
-    width: 34px;
-    height: 34px;
-    margin: 3px 3px;
-    border-radius: 5px;
-    border: none;
-    background-color: #FFD205;
+  font-size: 1rem;
+  line-height: 1.375rem;
 }
 
 .wrapperBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .wrapperContentWindow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
