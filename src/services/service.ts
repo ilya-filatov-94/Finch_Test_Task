@@ -1,5 +1,3 @@
-export const API_STUB = 'http://localhost:3001/results';
-
 export interface IPostSelectedData {
   selectedNumber: {
     firstField: number[];
@@ -13,7 +11,7 @@ export const postSelectedNumbers = (data: IPostSelectedData) => {
     setTimeout(() => {
       if (Math.random() < 0.75) {
         resolve(
-          fetch(`${API_STUB}`, {
+          fetch(`${process.env.REACT_APP_API_URL}`, {
             mode: 'no-cors',
             method: 'POST',
             headers: {
