@@ -6,14 +6,14 @@ import Button from '../Button/Button';
 
 const ResultCard: FC<{ headerTicket: string }> = ({ headerTicket }) => {
   const navigate = useNavigate();
-  const { hasResult } = useAppSelector(state => state.resultGame);
+  const { isWon } = useAppSelector(state => state.resultGame);
 
   return (
     <div className={styles.wrapperCard}>
       <div>
         <h1 className={styles.header}>{headerTicket}</h1>
         <p className={styles.resultText}>
-          {hasResult ? 'Ого, Вы выиграли! Поздравляем!' : 'К сожалению, Вы проиграли, повезёт в другой раз!'}
+          {isWon ? 'Ого, Вы выиграли! Поздравляем!' : 'К сожалению, Вы проиграли, повезёт в другой раз!'}
         </p>
       </div>
       <div className={styles.wrapperButton}>

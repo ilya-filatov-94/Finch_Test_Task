@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: Record<string, boolean> = {
-  hasResult: false,
+  isWon: false,
 };
 
 const resultGameSlice = createSlice({
@@ -9,7 +9,7 @@ const resultGameSlice = createSlice({
   initialState: initialState,
   reducers: {
     setResultGame(state, action: PayloadAction<boolean>) {
-      state.hasResult = action.payload;
+      state.isWon = action.payload;
     },
   },
 });
