@@ -1,4 +1,4 @@
-import { FC, DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
+import { FC, DetailedHTMLProps, ButtonHTMLAttributes, Fragment } from 'react';
 import styles from './Button.module.css';
 
 interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -10,10 +10,10 @@ const Button: FC<IButtonProps> = ({ text, loading, ...props }) => {
   return (
     <button className={styles.button} {...props}>
       {loading ? (
-        <div className={styles.wrapperLoader}>
+        <Fragment>
           <p>Пожалуйста, подождите</p>
-          <div className={styles.loaderCircle} />
-        </div>
+          <i className={styles.loaderCircle} />
+        </Fragment>
       ) : (
         text
       )}

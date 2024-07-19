@@ -7,7 +7,7 @@ import { setResultGame } from '../../store/ResultGameSlice';
 import PlayingField from '../PlayingField/PlayingField';
 import Button from '../Button/Button';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import { getRandomNumber, getRandomGroupNumbers } from '../../utils';
+import { setPayingFieldData, getRandomNumber, getRandomGroupNumbers } from '../../utils';
 import { postSelectedNumbers } from '../../services/service';
 
 export interface IField {
@@ -17,28 +17,14 @@ export interface IField {
 
 const sizeFirstField = 19;
 const sizeSecondField = 2;
-const firstField: IField[] = [];
-for (let i = 0; i < sizeFirstField; i++) {
-  firstField.push({
-    id: i + 1,
-    selected: false,
-  });
-}
-const secondField: IField[] = [];
-for (let i = 0; i < sizeSecondField; i++) {
-  secondField.push({
-    id: i + 1,
-    selected: false,
-  });
-}
+const limitFirstField = 8;
+const limitSecondField = 1;
 
 const GameCard: FC<{ headerTicket: string }> = memo(({ headerTicket }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const [selectedCellsFirstField, selectCellFirstField] = useState<IField[]>(firstField);
-  const [selectedCellsSecondField, selectCellSecondField] = useState<IField[]>(secondField);
-  const limitFirstField = 8;
-  const limitSecondField = 1;
+  const [selectedCellsFirstField, selectCellFirstField] = useState<IField[]>(setPayingFieldData(sizeFirstField));
+  const [selectedCellsSecondField, selectCellSecondField] = useState<IField[]>(setPayingFieldData(sizeSecondField));
   const [isOpenWindow, setOpenWindow] = useState<boolean>(false);
   const [isLoading, setLoading] = useState(false);
   const [isOpenErrorWindow, setOpenErrorWindow] = useState<boolean>(false);
