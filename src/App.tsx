@@ -1,17 +1,16 @@
 import { FC } from 'react';
 import './styles/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Card from './components/Card/Card';
-import GameCard from './components/GameCard/GameCard';
-import ResultCard from './components/ResultCard/ResultCard';
+import GameTicket from './components/GameCard';
+import ResultTicket from './components/ResultCard';
 
 const App: FC = () => {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route index element={<Card content={<GameCard headerTicket="Билет 1" />} />} />
-          <Route path="result" element={<Card content={<ResultCard headerTicket="Билет 1" />} />} />
+          <Route index element={<GameTicket headerTicket="Билет 1" />} />
+          <Route path="result" element={<ResultTicket headerTicket="Билет 1" />} />
         </Routes>
       </div>
     </BrowserRouter>

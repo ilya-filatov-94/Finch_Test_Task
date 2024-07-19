@@ -1,8 +1,9 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import styles from './ResultCard.module.css';
 import { useAppSelector } from '../../hooks/useTypedRedux';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import Card from '../Card/Card';
 
 const ResultCard: FC<{ headerTicket: string }> = ({ headerTicket }) => {
   const navigate = useNavigate();

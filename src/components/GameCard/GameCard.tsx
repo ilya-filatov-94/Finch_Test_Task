@@ -9,6 +9,7 @@ import Button from '../Button/Button';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import { setPayingFieldData, getRandomNumber, getRandomGroupNumbers } from '../../utils';
 import { postResultGame, IPostSelectedData } from '../../services/service';
+import Card from '../Card/Card';
 
 export interface IField {
   id: number;
