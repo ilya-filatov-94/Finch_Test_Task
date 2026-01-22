@@ -1,4 +1,4 @@
-import { FC, useState, PointerEvent, Dispatch, SetStateAction, memo } from 'react';
+import { FC, useState, memo } from 'react';
 import styles from './GameCard.module.css';
 import { ReactComponent as MagicWand } from '../../assets/images/magic-wand.svg';
 import { useNavigate } from 'react-router-dom';
@@ -7,9 +7,8 @@ import { setResultGame } from '../../store/ResultGameSlice';
 import PlayingField from '../PlayingField/PlayingField';
 import Button from '../Button/Button';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import { setPayingFieldData, getRandomNumber, getRandomGroupNumbers } from '../../utils';
+import { setPlayingFieldData, getRandomNumber, getRandomGroupNumbers } from '../../utils';
 import { postResultGame, IPostSelectedData } from '../../services/service';
-import Card from '../Card/Card';
 
 export interface IField {
   id: number;
@@ -24,8 +23,12 @@ const LIMIT_SECOND_FIELD = 1;
 const GameCard: FC<{ headerTicket: string }> = memo(({ headerTicket }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const [selectedCellsFirstField, selectCellFirstField] = useState<IField[]>(setPayingFieldData(SIZE_FIRST_FIELD));
-  const [selectedCellsSecondField, selectCellSecondField] = useState<IField[]>(setPayingFieldData(SIZE_SECOND_FIELD));
+  const [selectedCellsFirstField, selectCellFirstField] = useState<IField[]>(() =>
+    setPlayingFieldData(SIZE_FIRST_FIELD),
+  );
+  const [selectedCellsSecondField, selectCellSecondField] = useState<IField[]>(() =>
+    setPlayingFieldData(SIZE_SECOND_FIELD),
+  );
   const [isOpenWindow, setOpenWindow] = useState<boolean>(false);
   const [isLoading, setLoading] = useState(false);
   const [isOpenErrorWindow, setOpenErrorWindow] = useState<boolean>(false);

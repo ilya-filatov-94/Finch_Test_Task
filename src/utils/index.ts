@@ -1,4 +1,4 @@
-export function setPayingFieldData(limit: number) {
+export function setPlayingFieldData(limit: number) {
   const field = [];
   for (let i = 0; i < limit; i++) {
     field.push({
